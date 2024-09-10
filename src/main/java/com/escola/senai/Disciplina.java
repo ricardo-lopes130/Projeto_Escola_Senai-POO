@@ -3,30 +3,30 @@ package com.escola.senai;
 public class Disciplina {
     
     // fazer enum turno
-    private String nome;
-    private String turno;
+    private String nomeDisciplina;
+    private Turno turno;
     private Professor professor;
 
-    public Disciplina(String nome, String turno, Professor professor) {
-        this.nome = nome;
+    public Disciplina(String nomeDisciplina, Turno turno, Professor professor) {
+        this.nomeDisciplina = nomeDisciplina;
         this.turno = turno;
         this.professor = professor;
     }
 
-    public String getTurno() {
+    public String getNomeDisciplina() {
+        return nomeDisciplina;
+    }
+
+    public void setNomeDisciplina(String nomeDisciplina) {
+        this.nomeDisciplina = nomeDisciplina;
+    }
+
+    public Turno  getTurno() {
         return turno;
     }
 
-    public void setTurno(String turno) {
+    public void setTurno(Turno turno) {
         this.turno = turno;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public Professor getProfessor() {
@@ -35,5 +35,10 @@ public class Disciplina {
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
+    }
+
+    @Override
+    public String toString(){
+        return "Disciplina: " + nomeDisciplina + ". Turno: " + turno + ". Professor: " + professor.getNome() +".";
     }
 }
