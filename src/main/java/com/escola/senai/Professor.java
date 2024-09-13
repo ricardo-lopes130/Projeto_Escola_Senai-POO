@@ -6,6 +6,8 @@ public class Professor extends Pessoa{
 
     private double salario;
 
+    public Professor(){}
+
     public Professor(String nome, String cpf, double salario, Endereco endereco) {
         super(nome, cpf, endereco);
         this.salario = salario;

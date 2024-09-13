@@ -2,22 +2,16 @@ package com.escola.senai;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import java.util.Scanner;
 @SpringBootApplication
 public class SenaiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SenaiApplication.class, args);
+		Scanner sc = new Scanner(System.in);
 
-		Pessoa pessoa1 = new Pessoa("Fernando", "123.456.789-10", null);
-		Professor professor1 = new Professor("Arthur", "123.456.987-10", 8000.00, null);
-		Aluno aluno1 = new Aluno("Ricardo", "123.456.789-10", null);
-		Disciplina disciplina1 = new Disciplina("Matematica", "Noite", professor1);
-		Avaliacao avaliacao1 = new Avaliacao(10, 9.6, aluno1, disciplina1, professor1);
-		
-		
-		
-
+		System.out.println("__________* MENU ESCOLA SENAI *__________");
+		System.out.println("\n");
+		System.out.println("");
 	}
-
 }
