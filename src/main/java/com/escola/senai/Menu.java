@@ -10,6 +10,37 @@ public class Menu {
     public static List<Aluno> listaAluno = new ArrayList<>();
     public static List<Professor> listaProfessor = new ArrayList<>();
     public static Scanner sc = new Scanner(System.in);
+
+    public static void menu(){
+
+    System.out.println("__________* MENU ESCOLA SENAI *__________");
+    System.out.println("\n");
+    System.out.println("[1] - MENU ALUNO");
+    System.out.println("[2] - MENU PROFESSOR");
+    System.out.println("[0] - SAIR");
+    int opcao =sc.nextInt();
+
+        switch (opcao) {
+        case 1:
+            Menu.menuAluno();
+        break;
+        case 2:
+            Menu.menuProfessor();
+        break;
+        case 0:
+            System.out.println("Programa Encerrado.");
+        break;
+        default:
+        System.out.println("Opção inválida.");
+            break;
+                }
+        }
+
+
+
+
+
+
     public static void menuAluno(){
     
         int opcao;
@@ -53,6 +84,7 @@ public class Menu {
     public static void cadastrarAluno(){
         System.out.println("[1]- *CADASTRAR NOVO ALUNO* ");
         System.out.println("Nome: ");
+        sc.nextLine();
         String nome = sc.nextLine();
         Aluno aluno = new Aluno();
         aluno.setNome(nome);
@@ -62,13 +94,17 @@ public class Menu {
 
     public static void atualizarAluno(){
         System.out.println("[2]- *ATUALIZAR ALUNO* ");
+        if(listaAluno.isEmpty()){
+            System.out.println("   Lista Vazia   ");
+        }else{
         System.out.println("Digite o nome do aluno que deseja atualizar: ");
+        sc.nextLine();
         String nomeAtualizar =  sc.nextLine();
         int contador = 0;
-
         for(Aluno aluno : listaAluno) {
             if(aluno.getNome().equals(nomeAtualizar)){
                 System.out.println("Digite o novo nome do aluno que deseja atualizar: ");
+                sc.nextLine();
                 String nome = sc.nextLine();
                     aluno.setNome(nome);
                     System.out.println("Aluno modificado com sucesso.");
@@ -81,10 +117,15 @@ public class Menu {
                 System.out.println("Aluno nao encontrado.");
             }      
         }
+    }
     
         public static void removerAluno(){
-            System.out.println("   Remover o Aluno   ");
+            System.out.println("   *REMOVER ALUNO*   ");
+            if(listaAluno.isEmpty()){
+                System.out.println("   Lista Vazia   ");
+            }else{
             System.out.print("Nome do Aluno que deseja remover: ");
+            sc.nextLine();
             String remover = sc.nextLine();
             int contador = 0;
 
@@ -101,9 +142,10 @@ public class Menu {
                 System.out.println("Aluno nao encontrado");
             }
         }
+    }
     
         public static void listarAluno(){
-            System.out.println("   Lista dos Aluno   ");
+            System.out.println("   *LISTA DOS ALUNOS*   ");
             if(listaAluno.isEmpty()){
                 System.out.println("   Lista Vazia   ");
             }else{
@@ -156,6 +198,7 @@ public class Menu {
         public static void cadastrarProfessor(){
             System.out.println("[1]- *CADASTRAR NOVO PROFESSOR* ");
             System.out.println("Nome: ");
+            sc.nextLine();
             String nome = sc.nextLine();
             Professor professor = new Professor();
             professor.setNome(nome);
@@ -165,13 +208,18 @@ public class Menu {
     
         public static void atualizarProfessor(){
             System.out.println("[2]- *ATUALIZAR PROFESSOR* ");
+            if(listaAluno.isEmpty()){
+                System.out.println("   Lista Vazia   ");
+            }else{
             System.out.println("Digite o nome do professor que deseja atualizar: ");
+            sc.nextLine();
             String nomeAtualizar =  sc.nextLine();
             int contador = 0;
     
             for(Professor professor : listaProfessor) {
                 if(professor.getNome().equals(nomeAtualizar)){
                     System.out.println("Digite o novo nome do professor que deseja atualizar: ");
+                    sc.nextLine();
                     String nome = sc.nextLine();
                         professor.setNome(nome);
                         System.out.println("Professor modificado com sucesso.");
@@ -184,10 +232,15 @@ public class Menu {
                     System.out.println("Professor nao encontrado.");
                 }      
             }
+        }
         
             public static void removerProfessor(){
-                System.out.println("   Remover o Professor   ");
+                System.out.println("   *REMOVER PROFESSOR*   ");
+                if(listaAluno.isEmpty()){
+                    System.out.println("   Lista Vazia   ");
+                }else{
                 System.out.print("Nome do Professor que deseja remover: ");
+                sc.nextLine();
                 String remover = sc.nextLine();
                 int contador = 0;
     
@@ -204,9 +257,10 @@ public class Menu {
                     System.out.println("Professor nao encontrado");
                 }
             }
+        }
         
             public static void listarProfessor(){
-                System.out.println("   Lista dos Professor   ");
+                System.out.println("   *LISTA DE PROFESSORES*   ");
                 if(listaProfessor.isEmpty()){
                     System.out.println("   Lista Vazia   ");
                 }else{
@@ -217,6 +271,7 @@ public class Menu {
                 }    
             }      
         }
+    
 
 
 
