@@ -1,8 +1,7 @@
 package com.escola.senai;
 
 public class Disciplina {
-    
-    // fazer enum turno
+
     private String nomeDisciplina;
     private Turno turno;
     private Professor professor;
@@ -21,7 +20,7 @@ public class Disciplina {
         this.nomeDisciplina = nomeDisciplina;
     }
 
-    public Turno  getTurno() {
+    public Turno getTurno() {
         return turno;
     }
 
@@ -38,7 +37,7 @@ public class Disciplina {
     }
 
     @Override
-    public String toString(){
-        return "Disciplina: " + nomeDisciplina + ". Turno: " + turno + ". Professor: " + professor.getNome() +".";
+    public String toString() {
+        return "Disciplina: " + nomeDisciplina + ". Turno: " + turno + ". Professor: " + professor.getNome() + ".";
     }
 }
